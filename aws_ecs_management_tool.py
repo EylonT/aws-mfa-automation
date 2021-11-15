@@ -136,7 +136,7 @@ def stop_and_start_ecs_services_cluster():
 
 ## This function handles the exception if the user entered a wrong cluster name
 def cluster_not_found_exception():
-    cluster_answer = input(Fore.LIGHTRED_EX + "The cluster is not found. Do you want to see the available clusters? (y|n) ".lower() + Style.RESET_ALL)
+    cluster_answer = input(Fore.LIGHTRED_EX + "The cluster is not found. Do you want to see the available clusters? (y|n) " + Style.RESET_ALL).lower()
     if cluster_answer == 'y':
         cluster_list = client.list_clusters()
         cluster_list = cluster_list['clusterArns']
@@ -152,7 +152,7 @@ def cluster_not_found_exception():
 
 ## This function handles the exception if the user entered a wrong task definition.
 def task_not_found_exception():
-    task_def_answer = input(Fore.LIGHTRED_EX + "Task Definition is not found. Do you want to see the available task definitions? (y|n) ".lower() + Style.RESET_ALL)
+    task_def_answer = input(Fore.LIGHTRED_EX + "Task Definition is not found. Do you want to see the available task definitions? (y|n) " + Style.RESET_ALL).lower()
     if task_def_answer == 'y':
         task_def_list = client.list_task_definitions(
         status='ACTIVE',
@@ -171,7 +171,7 @@ def task_not_found_exception():
 
 ## This function handles the exception if the user entered a wrong service.
 def service_not_found_exception():
-    service_answer = input(Fore.LIGHTRED_EX + "The service is not found. Do you want to see the available services? (y|n) ".lower() + Style.RESET_ALL)
+    service_answer = input(Fore.LIGHTRED_EX + "The service is not found. Do you want to see the available services? (y|n) " + Style.RESET_ALL).lower()
     if service_answer == 'y':
         service_list = client.list_services(
             cluster=cluster_name
