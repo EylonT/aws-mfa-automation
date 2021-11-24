@@ -13,7 +13,7 @@ if (-Not $service){
     python -m pip install --upgrade pip
     pip install boto3 colorama
     msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi /qr
-    sleep -Seconds 25
+    sleep -Seconds 35
     $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
     aws configure
     }
@@ -22,7 +22,7 @@ else{
     python -m pip install --upgrade pip
     pip install boto3
     msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi /qr
-    sleep -Seconds 25
+    sleep -Seconds 35
     $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
     aws configure
 }

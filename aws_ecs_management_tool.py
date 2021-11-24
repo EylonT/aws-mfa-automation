@@ -42,7 +42,6 @@ def aws_configuration():
 
 ## This function clears the screen and prints the tool's details and menu.
 def set_menu():
-    print(Fore.LIGHTYELLOW_EX + "===================\nECS-MANAGEMENT-TOOL\n===================\nAuthor: Eylon\nVersion: 1.0.5\n" + Style.RESET_ALL)
     print (Fore.LIGHTBLUE_EX + "Menu")
     print ("-----------------")
     print ("1) Manual Mode")
@@ -189,6 +188,7 @@ def service_not_found_exception():
 
 ## Main script
 system('cls||clear')
+print(Fore.LIGHTYELLOW_EX + "===================\nECS-MANAGEMENT-TOOL\n===================\nAuthor: Eylon\nVersion: 1.0.5\n" + Style.RESET_ALL)
 
 while True:
     try:
