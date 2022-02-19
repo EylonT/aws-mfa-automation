@@ -44,11 +44,10 @@ def configure_mfa():
     user = input(Fore.LIGHTCYAN_EX + "Enter your aws username: " + Style.RESET_ALL)
     account_id = int(input(Fore.LIGHTCYAN_EX + "Enter your aws account id: " + Style.RESET_ALL))
     mfa = input(Fore.LIGHTCYAN_EX + "Enter the mfa code: " + Style.RESET_ALL)
-    session = boto3.Session(profile_name='soi') # Please enter profile_name='<PROFILE>' if you are using profiles and not the default profile.
+    session = boto3.Session() # Please enter profile_name='<PROFILE>' if you are using profiles and not the default profile.
     client = session.client('sts')
     mfa_creds = client.get_session_token(
-    #DurationSeconds = 129600,
-    DurationSeconds = 900,
+    DurationSeconds = 129600,
     SerialNumber = f'arn:aws:iam::{account_id}:mfa/{user}',
     TokenCode = mfa
     )
