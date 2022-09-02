@@ -1,12 +1,13 @@
 ## This is the mfa automation script embedded in an ecs tool. 
 ## It brings individual services up/down, or as a 'cluster' (all of the services that exist in the cluster.)
 
+import click
 import re
 import boto3
 import botocore
 import botocore.errorfactory
 from botocore.config import Config
-from os import path, system
+from os import path
 from colorama import Fore, Style
 
 ## This function creates the mfa profile config in the ~/.aws/config file.
@@ -187,7 +188,7 @@ def service_not_found_exception():
         quit()
 
 ## Main script
-system('cls||clear')
+click.clear()
 print(Fore.LIGHTYELLOW_EX + "===================\nECS-MANAGEMENT-TOOL\n===================\nAuthor: Eylon\nVersion: 1.0.5\n" + Style.RESET_ALL)
 
 while True:
